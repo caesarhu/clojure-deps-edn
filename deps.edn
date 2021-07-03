@@ -287,7 +287,7 @@
   ;; clojure -X:project/graph-deps
   :project/graph-deps
   {:replace-paths []
-   :replace-deps  {org.clojure/tools.deps.graph {:mvn/version "1.0.56"}}
+   :replace-deps  {org.clojure/tools.deps.graph {:mvn/version "1.0.63"}}
    :main-opts     ["-m" "clojure.tools.deps.graph"] ;; deprecated
    :ns-default    clojure.tools.deps.graph
    :exec-fn       graph
@@ -305,7 +305,7 @@
   ;; cd ~/.clojure && clojure -M:project/outdated
   :project/outdated
   {:replace-paths []
-   :replace-deps  {com.github.liquidz/antq {:mvn/version "0.14.1"}
+   :replace-deps  {com.github.liquidz/antq {:mvn/version "0.15.3"}
                    org.slf4j/slf4j-nop     {:mvn/version "RELEASE"}}
    :main-opts     ["-m" "antq.core"]}
 
@@ -328,19 +328,19 @@
   :project/unused
   {:extra-deps {borkdude/carve
                 {:git/url "https://github.com/borkdude/carve"
-                 :sha     "3fcc2a900e4fa4be2c9a539c9971c60e2e921162"}}
+                 :sha     "c9a4dec89032f2003cc439c473fcd3c41e809669"}}
    :main-opts  ["-m" "carve.main"]}
 
   :project/unused-vars
   {:extra-deps {borkdude/carve
                 {:git/url "https://github.com/borkdude/carve"
-                 :sha     "3fcc2a900e4fa4be2c9a539c9971c60e2e921162"}}
+                 :sha     "c9a4dec89032f2003cc439c473fcd3c41e809669"}}
    :main-opts  ["-m" "carve.main"]}
 
   :project/carve
   {:extra-deps {borkdude/carve
                 {:git/url "https://github.com/borkdude/carve"
-                 :sha     "3fcc2a900e4fa4be2c9a539c9971c60e2e921162"}}
+                 :sha     "c9a4dec89032f2003cc439c473fcd3c41e809669"}}
    :main-opts  ["-m" "carve.main"]}
 
 
@@ -368,7 +368,7 @@
 
 
   :project/jar
-  {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.216"}}
+  {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.245"}}
    :exec-fn      hf.depstar/jar
    :exec-args    {:jar "project.jar"
                   :aot true}}
@@ -377,7 +377,7 @@
   ;; clojure -X:project/uberjar :main-class domain.application
   ;; clojure -X:project/uberjar :jar '"project-name.jar"' :main-class domain.application
   :project/uberjar
-  {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.216"}}
+  {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.245"}}
    :exec-fn      hf.depstar/uberjar
    :exec-args    {:jar "uber.jar"
                   :aot true}}
@@ -487,7 +487,7 @@
   ;; H2 embedded database
   :database/h2
   {:extra-deps {com.h2database/h2                 {:mvn/version "1.4.200"}
-                com.github.seancorfield/next.jdbc {:mvn/version "1.2.659"}}}
+                com.github.seancorfield/next.jdbc {:mvn/version "1.2.674"}}}
 
   ;; End of Databases and drivers uses only during development
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -501,16 +501,16 @@
   ;; https://github.com/djblue/portal
 
   :inspect/portal-cli
-  {:extra-deps {djblue/portal {:mvn/version "0.11.2"}}}
+  {:extra-deps {djblue/portal {:mvn/version "0.12.0"}}}
 
   :inspect/portal-web
-  {:extra-deps {djblue/portal             {:mvn/version "0.11.2"}
-                org.clojure/clojurescript {:mvn/version "1.10.844"}}
+  {:extra-deps {djblue/portal             {:mvn/version "0.12.0"}
+                org.clojure/clojurescript {:mvn/version "1.10.866"}}
    :main-opts  ["-m" "cljs.main"]}
 
   :inspect/portal-node
-  {:extra-deps {djblue/portal             {:mvn/version "0.11.2"}
-                org.clojure/clojurescript {:mvn/version "1.10.844"}}
+  {:extra-deps {djblue/portal             {:mvn/version "0.12.0"}
+                org.clojure/clojurescript {:mvn/version "1.10.866"}}
    :main-opts  ["-m" "cljs.main" "-re" "node"]}
 
 
@@ -523,21 +523,21 @@
   ;; :inspect/rebl         (Any JDK 11 distribution - tested with OpenJDK)
 
   :inspect/rebl
-  {:extra-deps {com.cognitect/rebl          {:mvn/version "0.9.241"}
+  {:extra-deps {com.cognitect/rebl          {:mvn/version "0.9.242"}
                 org.clojure/core.async      {:mvn/version "1.3.618"}
-                org.openjfx/javafx-fxml     {:mvn/version "11.0.1"}
-                org.openjfx/javafx-controls {:mvn/version "11.0.1"}
-                org.openjfx/javafx-swing    {:mvn/version "11.0.1"}
-                org.openjfx/javafx-base     {:mvn/version "11.0.1"}
-                org.openjfx/javafx-web      {:mvn/version "11.0.1"}
+                org.openjfx/javafx-fxml     {:mvn/version "15-ea+6"}
+                org.openjfx/javafx-controls {:mvn/version "15-ea+6"}
+                org.openjfx/javafx-swing    {:mvn/version "15-ea+6"}
+                org.openjfx/javafx-base     {:mvn/version "15-ea+6"}
+                org.openjfx/javafx-web      {:mvn/version "15-ea+6"}
                 ;; deps for file datafication (REBL 0.9.149 or later)
                 org.clojure/data.csv        {:mvn/version "1.0.0"}
                 org.clojure/data.json       {:mvn/version "2.3.1"}
-                org.yaml/snakeyaml          {:mvn/version "1.28"}}
+                org.yaml/snakeyaml          {:mvn/version "1.29"}}
    :main-opts  ["-m" "cognitect.rebl"]}
 
   :inspect/rebl-java8
-  {:extra-deps {com.cognitect/rebl {:mvn/version "0.9.241"}}
+  {:extra-deps {com.cognitect/rebl {:mvn/version "0.9.242"}}
    :main-opts  ["-m" "cognitect.rebl"]}
 
 
@@ -672,7 +672,7 @@
   ;; Run a REPL using nREPL server for access by cider-connect-cljs
   ;; clojure -M:middleware/cider-cljs
   :middleware/cider-cljs
-  {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.773"}
+  {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.866"}
                 nrepl/nrepl               {:mvn/version "0.8.3"}
                 cider/cider-nrepl         {:mvn/version "0.26.0"}
                 cider/piggieback          {:mvn/version "0.5.2"}}
@@ -773,7 +773,7 @@
   {:extra-paths ["test"]
    :extra-deps  {com.cognitect/test-runner
                  {:git/url "https://github.com/cognitect-labs/test-runner.git"
-                  :sha     "705ad25bbf0228b1c38d0244a36001c2987d7337"}}
+                  :sha     "f597341b6ca7bb4cf027e0a34a6710ca9cb969da"}}
    :main-opts   ["-m" "cognitect.test-runner"]}
 
   ;; Compiling tests before running - automate Ahead of Time compilation
@@ -785,7 +785,7 @@
   {:extra-paths ["test"]
    :extra-deps  {com.cognitect/test-runner
                  {:git/url "https://github.com/cognitect-labs/test-runner.git"
-                  :sha     "705ad25bbf0228b1c38d0244a36001c2987d7337"}}
+                  :sha     "f597341b6ca7bb4cf027e0a34a6710ca9cb969da"}}
    :main-opts   ["-e" "(compile,'your.namespace-here)"
                  "-m" "cognitect.test-runner"]}
 
@@ -1081,7 +1081,7 @@
   :alpha/hotload-libs
   {:extra-deps {org.clojure/tools.deps.alpha
                 {:git/url "https://github.com/clojure/tools.deps.alpha"
-                 :sha     "d77476f3d5f624249462e275ae62d26da89f320b"
+                 :sha     "6a2568b988d066e392065d8939122c56d1eda9bc"
                  ;; Using latest commit on the add-lib3 branch
                  ;; do not use :project/outdated to update
                  }}
@@ -1092,7 +1092,7 @@
   :alpha/hot-load
   {:extra-deps {org.clojure/tools.deps.alpha
                 {:git/url "https://github.com/clojure/tools.deps.alpha"
-                 :sha     "d77476f3d5f624249462e275ae62d26da89f320b"
+                 :sha     "6a2568b988d066e392065d8939122c56d1eda9bc"
                  ;; Using latest commit on the add-lib3 branch
                  ;; do not use :project/outdated to update
                  }}
